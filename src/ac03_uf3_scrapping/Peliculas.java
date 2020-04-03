@@ -2,20 +2,20 @@ package ac03_uf3_scrapping;
 
 /**
  *
- * @author Daniel Migales
+ * @author Daniel Migales Puertas
+ *
  */
-
 public class Peliculas {
 
     private String href;
     private String titulo;
 
     public Peliculas(String href, String titulo) {
-       
-        this.href = href; 
+
+        this.href = href;
         this.titulo = titulo;
     }
-    
+
     public String getTitulo() {
         return titulo;
     }
@@ -34,7 +34,7 @@ public class Peliculas {
 
     @Override
     public String toString() {
-        return  href + "\n" + titulo;
+        return href + "\n" + titulo;
     }
 
 }

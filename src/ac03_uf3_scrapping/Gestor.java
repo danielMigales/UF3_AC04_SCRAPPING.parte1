@@ -22,9 +22,9 @@ import org.w3c.dom.Text;
 
 /**
  *
- * @author Daniel Migales
+ * @author Daniel Migales Puertas
+ *
  */
-
 public class Gestor {
 
     private ArrayList<String> href = new ArrayList<String>();
@@ -37,14 +37,14 @@ public class Gestor {
 
         String cadena;
         FileReader file = new FileReader(archivo);
-        System.out.println("Resultado extraido del html: \n" );
+        System.out.println("Resultado extraido del html: \n");
         try (BufferedReader buffer = new BufferedReader(file)) {
             while ((cadena = buffer.readLine()) != null) {
                 if (cadena.contains("<td><i>")) {
                     String[] arraySplit = cadena.split("\"");
                     href.add(arraySplit[1]);
                     title.add(arraySplit[3]);
-                    pelicula = new Peliculas(arraySplit[1], arraySplit[3]);                   
+                    pelicula = new Peliculas(arraySplit[1], arraySplit[3]);
                     System.out.println(pelicula.toString() + "\n");
                     listadoPeliculas.add(pelicula);
                 }
@@ -69,7 +69,7 @@ public class Gestor {
 
             String hipervinculo = listadoPelicula.getHref();
             CrearElemento("hipervinculo", hipervinculo, raiz, document);
-            String titulo = listadoPelicula.getTitulo();           
+            String titulo = listadoPelicula.getTitulo();
             CrearElemento("titulo", titulo, raiz, document);
 
             Source source = new DOMSource(document);
